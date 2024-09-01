@@ -1,0 +1,10 @@
+This mod will improve the current accessories prefix by making the weaker one merged with other prefix
+
+Balance suggestion are welcome
+
+
+For developer :
+This mod have mod call that you can uses, it allow the merge accessories effect 
+By default it is set to 1
+
+Aware that set to 0 is essentially will completely remove it from reforging

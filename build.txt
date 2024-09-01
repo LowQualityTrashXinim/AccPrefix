@@ -1,0 +1,3 @@
+displayName = Accessories Prefix++
+author = Xinim
+version = 0.1
