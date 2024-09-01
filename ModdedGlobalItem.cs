@@ -154,7 +154,7 @@ namespace PrefixImproved
                 if (item.CanApplyPrefix(prefix) && item.accessory)
                 {
                     //we will simulate a item here
-                    Item simulateitem = new Item(0, 1, prefix);
+                    Item simulateitem = new Item(item.type, 1, prefix);
                     player.GrantPrefixBenefits(simulateitem);
                 }
             }
