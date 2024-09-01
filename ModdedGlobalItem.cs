@@ -5,6 +5,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using System.Collections.Generic;
+using System.IO;
 
 namespace PrefixImproved
 {
@@ -30,6 +31,7 @@ namespace PrefixImproved
         }
         public override void LoadData(Item item, TagCompound tag)
         {
+            PrefixList = new();
             PrefixList = tag.Get<List<int>>("PrefixList");
 
             int count = PrefixList.Count;
@@ -47,6 +49,24 @@ namespace PrefixImproved
                 {
                     PrefixList.RemoveAt(i);
                 }
+            }
+        }
+        public override void NetSend(Item item, BinaryWriter writer)
+        {
+            writer.Write(PrefixList.Count);
+            for (int i = 0; i < PrefixList.Count; i++)
+            {
+                writer.Write(PrefixList[i]);
+            }
+        }
+
+        public override void NetReceive(Item item, BinaryReader reader)
+        {
+            PrefixList = new();
+            int count = reader.ReadInt32();
+            for (int i = 0; i < count; i++)
+            {
+                PrefixList.Add(reader.ReadInt32());
             }
         }
         public override void PostReforge(Item item)
