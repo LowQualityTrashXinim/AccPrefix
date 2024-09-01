@@ -8,3 +8,7 @@ This mod have mod call that you can uses, it allow the merge accessories effect
 By default it is set to 1
 
 Aware that set to 0 is essentially will completely remove it from reforging
+
+Github : https://github.com/LowQualityTrashXinim/AccPrefix/tree/master
+
+Main discord server : https://discord.gg/K7xfDmXZ
